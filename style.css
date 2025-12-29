@@ -1,0 +1,131 @@
+body {
+    margin: 0;
+    font-family: Consolas, monospace;
+    background: #1e1e1e;
+    color: #ddd;
+}
+
+header {
+    background: #252526;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#dropZone {
+    margin: 10px;
+    padding: 15px;
+    border: 2px dashed #555;
+    text-align: center;
+    color: #aaa;
+    transition: all 0.2s ease;
+}
+
+#dropZone.dragover {
+    border-color: #4caf50;
+    color: #4caf50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.controls {
+    padding: 10px;
+    background: #333;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.input-row {
+    display: flex;
+    gap: 5px;
+}
+
+.controls input[type="text"] {
+    width: 250px;
+    padding: 6px;
+    background: #1e1e1e;
+    border: 1px solid #555;
+    color: #ddd;
+}
+
+.controls button {
+    padding: 6px;
+    background: #444;
+    border: 1px solid #555;
+    color: #ddd;
+    cursor: pointer;
+}
+
+#searchBtn, #massSearchBtn {
+    width: 120px;
+    height: 32px;
+}
+
+#replaceBtn {
+    width: 100px;
+    height: 69px;
+}
+
+.action-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.tabs {
+    display: flex;
+    background: #2d2d2d;
+    overflow-x: auto;
+    min-height: 40px;
+}
+
+.tab {
+    padding: 8px 12px;
+    cursor: pointer;
+    border-right: 1px solid #444;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.tab.active {
+    background: #1e1e1e;
+}
+
+.content {
+    height: calc(100vh - 280px);
+    overflow-y: auto;
+    padding: 0; /* İçerik padding'i kaldırıldı, row'lar yönetiyor */
+    position: relative;
+}
+
+.line {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    align-items: center;
+    overflow: hidden;
+}
+
+.line-number {
+    color: #777;
+    text-align: right;
+    padding-right: 10px;
+    user-select: none;
+    font-size: 12px;
+}
+
+.log-line {
+    white-space: pre; /* Optimize edildi: pre-wrap büyük dosyalarda render yükü getirir */
+    word-break: break-all;
+    font-size: 13px;
+    line-height: 20px;
+}

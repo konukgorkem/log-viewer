@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Log Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>🧾 Web Log Viewer</h1>
+    <input type="file" id="fileInput" multiple accept=".log,.txt">
+</header>
+
+<div id="dropZone">📂 Drag and Drop The Log Files</div>
+
+<section class="controls">
+    <div class="search-group">
+        <div class="input-row">
+            <input type="text" id="searchBox" placeholder="Search in active log">
+            <button id="searchBtn">Search</button>
+        </div>
+        <div class="input-row">
+            <input type="text" id="massSearchBox" placeholder="Mass Search (checked logs)">
+            <button id="massSearchBtn">Mass Search</button>
+        </div>
+    </div>
+    
+    <button id="replaceBtn">Replace</button>
+
+    <div class="action-group">
+        <label>
+            <input type="checkbox" id="errorOnly">
+            Only ERROR
+        </label>
+        <button id="exportBtn">Export</button>
+    </div>
+</section>
+
+<div class="tabs" id="tabs"></div>
+<div class="content-wrapper" id="contentWrapper">
+    <div class="content" id="content"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
